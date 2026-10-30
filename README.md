@@ -7,6 +7,11 @@ A tablet-optimized web application designed specifically for **iPad in landscape
 ## 📱 Features
 
 - **Built Specifically for iPad Landscape**: Fixed two-column layout with 70% item catalog on the left and 30% sticky shopping list on the right.
+- **Progressive Web App (PWA)**:
+  - Full offline support via Service Worker caching (`sw.js`).
+  - Web App Manifest (`manifest.json`) enabling native-like installation.
+  - Complete suite of custom icons: SVG, `apple-touch-icon` (180x180), standard & maskable icons (192x192, 512x512), and favicons.
+  - One-tap "Install App" button on supported browsers (Chrome, Edge, Android) and native iOS "Add to Home Screen" support.
 - **Mobile Phone Shopping Mode**: When opened on a phone, the catalog grid and category navigation are automatically hidden, presenting **only the Current Shopping List** in full width for easy one-handed checking in supermarket aisles.
 - **Senior-Friendly Touch Controls**:
   - Oversized **`▲` (Increase)** and **`▼` (Decrease)** buttons ($\ge 64\text{px} \times 56\text{px}$).

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <!-- Cart Accent Gradient -->
+    <linearGradient id="cartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Grocery Accent Colors -->
+    <linearGradient id="appleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+
+    <linearGradient id="carrotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+
+    <linearGradient id="breadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+    <filter id="itemShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- App Icon Background (Squircle) -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Inner Glow / Highlight -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="4"/>
+
+  <!-- Grocery Items Peeking out of the Cart -->
+  <g filter="url(#itemShadow)">
+    <!-- Bread Loaf (Left) -->
+    <rect x="140" y="125" width="65" height="110" rx="30" fill="url(#breadGrad)"/>
+    <!-- Bread slash marks -->
+    <line x1="156" y1="145" x2="188" y2="155" stroke="#ca8a04" stroke-width="4" stroke-linecap="round"/>
+    <line x1="156" y1="170" x2="188" y2="180" stroke="#ca8a04" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Milk Bottle (Middle) -->
+    <rect x="225" y="105" width="62" height="130" rx="14" fill="#ffffff"/>
+    <rect x="238" y="90" width="36" height="20" rx="6" fill="#38bdf8"/>
+    <!-- Milk label -->
+    <rect x="231" y="145" width="50" height="42" rx="6" fill="#e0f2fe"/>
+    <circle cx="256" cy="166" r="10" fill="#0284c7"/>
+
+    <!-- Red Apple (Right) -->
+    <circle cx="340" cy="180" r="42" fill="url(#appleGrad)"/>
+    <!-- Apple Leaf & Stem -->
+    <path d="M340 144 Q344 125 352 120" stroke="#78350f" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M342 135 Q360 128 362 142 Z" fill="#22c55e"/>
+
+    <!-- Carrot (Diagonal Behind Apple) -->
+    <path d="M295 140 L375 220 L360 230 Z" fill="url(#carrotGrad)"/>
+    <path d="M290 135 L280 120 M292 133 L290 115 M295 137 L308 120" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Shopping Cart Body -->
+  <g filter="url(#shadow)">
+    <!-- Cart Basket Grid Container -->
+    <path d="M 120 205
+             L 375 205
+             Q 390 205 385 225
+             L 360 330
+             Q 355 345 335 345
+             L 175 345
+             Q 155 345 150 330
+             L 128 220
+             Z"
+          fill="url(#cartGrad)"/>
+
+    <!-- Basket Front Texture / Slats -->
+    <path d="M 160 230 L 175 320" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 210 230 L 218 320" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 260 230 L 260 320" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 310 230 L 302 320" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 350 230 L 338 320" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Cart Horizontal Trim -->
+    <line x1="145" y1="275" x2="368" y2="275" stroke="#94a3b8" stroke-width="5"/>
+
+    <!-- Cart Metal Rim -->
+    <path d="M 110 205 L 390 205" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- Cart Handle & Frame -->
+    <path d="M 100 170
+             L 124 205
+             L 155 355
+             L 345 355"
+          fill="none"
+          stroke="#e2e8f0"
+          stroke-width="12"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Cart Handle Grip -->
+    <line x1="88" y1="160" x2="110" y2="185" stroke="#f59e0b" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- Wheels Frame Base -->
+    <path d="M 165 355 L 180 395 M 325 355 L 315 395" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Cart Wheel 1 (Back) -->
+    <circle cx="185" cy="405" r="22" fill="#0f172a"/>
+    <circle cx="185" cy="405" r="10" fill="#ffffff"/>
+
+    <!-- Cart Wheel 2 (Front) -->
+    <circle cx="315" cy="405" r="22" fill="#0f172a"/>
+    <circle cx="315" cy="405" r="10" fill="#ffffff"/>
+  </g>
+</svg>
+

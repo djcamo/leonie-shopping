@@ -27,7 +27,7 @@
       { "id": "cucumber", "name": "Cucumber", "emoji": "🥒", "unit": "bag" },
       { "id": "red_grapes", "name": "Red Grapes", "emoji": "🍇", "unit": "bag" },
       { "id": "white_grapes", "name": "White Grapes", "emoji": "🍇", "unit": "bag" },
-      { "id": "Capsicums", "name": "Capsicums", "emoji": "🥒", "unit": "each"}
+      { "id": "Capsicum", "name": "Capsicum", "emoji": "🌶️", "unit": "each" }
     ]
   },
   {
@@ -51,6 +51,15 @@
       { "id": "tinned_soup", "name": "Pumpkin Soup", "emoji": "🥫", "unit": "tin" },
       { "id": "tinned_tuna", "name": "Tinned Tuna", "emoji": "🐟", "unit": "tin" },
       { "id": "chocolate", "name": "Chocolate", "emoji": "🍫", "unit": "pack" }
+    ]
+  },
+  {
+    "category": "Household & Care",
+    "items": [
+      { "id": "toilet_paper", "name": "Toilet Paper (Pack)", "emoji": "🧻" },
+      { "id": "paper_towel", "name": "Paper Towel", "emoji": "🧻" },
+      { "id": "dish_liquid", "name": "Dishwashing Liquid", "emoji": "🧼" },
+      { "id": "tissues", "name": "Tissues (Box)", "emoji": "🤧" }
     ]
   }
 ]

@@ -20,6 +20,10 @@ const cartItemsEl = document.getElementById("cart-items");
 const btnClearListEl = document.getElementById("btn-clear-list");
 const statusPillEl = document.getElementById("status-pill");
 const statusTextEl = document.getElementById("status-text");
+const btnInstallAppEl = document.getElementById("btn-install-app");
+
+// PWA Install Prompt State
+let deferredInstallPrompt = null;
 
 // Modal Elements
 const clearModalEl = document.getElementById("clear-modal");
@@ -57,8 +61,11 @@ async function initApp() {
     // 4. Connect to synchronization layer (Firestore or localStorage)
     initSync(handleSyncUpdate, handleStatusChange);
 
-    // 5. Setup modal and button listeners
+    // 5. Setup modal, PWA install and button listeners
     setupEventListeners();
+
+    // 6. Register Progressive Web App Service Worker
+    registerServiceWorker();
   } catch (error) {
     console.error("Initialization error:", error);
     statusTextEl.textContent = "Error loading data";
@@ -352,6 +359,53 @@ function setupEventListeners() {
       clearModalEl.classList.add("hidden");
     }
   });
+
+  // PWA Install Prompt Handling (Chrome, Edge, Android)
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    console.log("[PWA] beforeinstallprompt event captured");
+    if (btnInstallAppEl) {
+      btnInstallAppEl.classList.remove("hidden");
+    }
+  });
+
+  if (btnInstallAppEl) {
+    btnInstallAppEl.addEventListener("click", async () => {
+      if (!deferredInstallPrompt) return;
+      deferredInstallPrompt.prompt();
+      const { outcome } = await deferredInstallPrompt.userChoice;
+      console.log(`[PWA] Install prompt outcome: ${outcome}`);
+      deferredInstallPrompt = null;
+      btnInstallAppEl.classList.add("hidden");
+    });
+  }
+
+  window.addEventListener("appinstalled", () => {
+    console.log("[PWA] App successfully installed to device");
+    deferredInstallPrompt = null;
+    if (btnInstallAppEl) {
+      btnInstallAppEl.classList.add("hidden");
+    }
+  });
+}
+
+/**
+ * Registers PWA Service Worker for offline capability & caching
+ */
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("./sw.js")
+        .then((registration) => {
+          console.log("[PWA] ServiceWorker registered with scope:", registration.scope);
+        })
+        .catch((error) => {
+          console.warn("[PWA] ServiceWorker registration failed:", error);
+        });
+    });
+  }
 }
 
 // Start App when DOM is ready
