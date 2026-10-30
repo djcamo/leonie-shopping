@@ -53,7 +53,8 @@
       { "id": "sweet_biscuits", "name": "Jatz Biscuits", "emoji": "🍪", "unit": "packet" },
       { "id": "tinned_soup", "name": "Pumpkin Soup", "emoji": "🥫", "unit": "tin" },
       { "id": "tinned_tuna", "name": "Tinned Tuna", "emoji": "🐟", "unit": "tin" },
-      { "id": "chocolate", "name": "Chocolate", "emoji": "🍫", "unit": "pack" }
+      { "id": "chocolate", "name": "Twirl Chocolate", "emoji": "🍫", "unit": "pack" },
+      {"id": "Cashews", "name": "Cashews", "emoji": "🌰", "unit": "pack"}
     ]
   },
   {
