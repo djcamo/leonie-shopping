@@ -1,0 +1,702 @@
+/* =============================================================================
+   Leonie's Groceries - iPad Landscape Optimized Stylesheet
+   Designed with High-Contrast, Senior-Friendly Accessibility
+   ============================================================================= */
+
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Colors */
+  --bg-app: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-selected: #f0fdf4;
+  --border-selected: #16a34a;
+  
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-light: #64748b;
+  
+  --btn-up: #16a34a;
+  --btn-up-hover: #15803d;
+  --btn-up-active: #166534;
+  
+  --btn-down: #e2e8f0;
+  --btn-down-hover: #cbd5e1;
+  --btn-down-active: #94a3b8;
+  --btn-down-text: #1e293b;
+
+  --btn-danger: #dc2626;
+  --btn-danger-hover: #b91c1c;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --border-color: #cbd5e1;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-selected: 0 4px 12px rgba(22, 163, 74, 0.2);
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+/* Reset & iPad Kiosk Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  font-family: var(--font-family);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  user-select: none;
+  -webkit-user-select: none;
+  overscroll-behavior: none;
+}
+
+/* Touch Action Optimization: Removes 300ms delay on iOS */
+button, input, select, .item-card, .cat-pill {
+  touch-action: manipulation;
+}
+
+/* App Shell (Fixed Landscape Layout) */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--border-color);
+  flex-shrink: 0;
+  height: 68px;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.brand-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Status Pill */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #94a3b8;
+  display: inline-block;
+}
+
+.status-pill.synced .status-dot {
+  background-color: #16a34a;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.6);
+}
+.status-pill.synced {
+  background-color: #f0fdf4;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.status-pill.syncing .status-dot {
+  background-color: #eab308;
+}
+.status-pill.syncing {
+  background-color: #fefce8;
+  color: #854d0e;
+  border-color: #fef08a;
+}
+
+.status-pill.local .status-dot {
+  background-color: #3b82f6;
+}
+.status-pill.local {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border-color: #bfdbfe;
+}
+
+.status-pill.offline,
+.status-pill.error {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+.status-pill.offline .status-dot,
+.status-pill.error .status-dot {
+  background-color: #ef4444;
+}
+
+/* Category Navigation Bar */
+.category-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.category-nav::-webkit-scrollbar {
+  display: none; /* Safari / Chrome */
+}
+
+.cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  min-height: 48px;
+  border-radius: 9999px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: #f1f5f9;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cat-pill:active {
+  transform: scale(0.97);
+}
+
+.cat-pill.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.cat-pill .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: inherit;
+}
+
+.cat-pill.active .badge {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Main Split View: Left Catalog (70%), Right Cart (30%) */
+.app-main {
+  display: flex;
+  flex: 1;
+  min-height: 0; /* Important for scroll container */
+  overflow: hidden;
+}
+
+/* Left Panel: Catalog Section */
+.catalog-section {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 40px 24px;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Grocery Item Card */
+.item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-card);
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.1s ease;
+  min-height: 180px;
+}
+
+.item-card.selected {
+  background-color: var(--bg-card-selected);
+  border-color: var(--border-selected);
+  box-shadow: var(--shadow-selected);
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.item-emoji {
+  font-size: 40px;
+  line-height: 1;
+  flex-shrink: 0;
+  background-color: #f8fafc;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 4px;
+  word-wrap: break-word;
+}
+
+.item-unit {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-light);
+  text-transform: capitalize;
+}
+
+/* Stepper Controls (Oversized, Senior-Friendly) */
+.card-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 4px;
+  margin-top: auto;
+}
+
+.item-card.selected .card-stepper {
+  background-color: #ffffff;
+  border-color: #86efac;
+}
+
+/* Stepper Buttons: Minimum 64px x 56px touch target */
+.btn-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background-color 0.1s ease, transform 0.08s ease;
+}
+
+.btn-step:active {
+  transform: scale(0.92);
+}
+
+.btn-down {
+  background-color: var(--btn-down);
+  color: var(--btn-down-text);
+}
+
+.btn-down:active {
+  background-color: var(--btn-down-active);
+}
+
+.btn-down:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-up {
+  background-color: var(--btn-up);
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(22, 163, 74, 0.3);
+}
+
+.btn-up:active {
+  background-color: var(--btn-up-active);
+}
+
+.qty-display {
+  flex: 1;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.item-card.selected .qty-display {
+  color: #15803d;
+}
+
+/* Right Panel: Active Shopping List Sidebar (30% Width, min 340px) */
+.cart-sidebar {
+  width: 360px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border-left: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.total-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 800;
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Sidebar List Container */
+.sidebar-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 24px;
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.empty-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.empty-text {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+/* Active Cart Item Row */
+.cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  transition: all 0.1s ease;
+}
+
+.cart-row-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-row-emoji {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.cart-row-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-row-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-row-unit {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.cart-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cart-btn-mini {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cart-btn-mini:active {
+  transform: scale(0.92);
+}
+
+.cart-qty-badge {
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--primary);
+  min-width: 32px;
+  text-align: center;
+}
+
+/* Sidebar Footer (Clear List Action) */
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-color);
+  background-color: #ffffff;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-clear-all {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  border: 2px solid #fecaca;
+  background-color: #fef2f2;
+  color: #b91c1c;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-clear-all:active {
+  background-color: #fee2e2;
+  transform: scale(0.97);
+}
+
+.btn-clear-all:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  border-color: #e2e8f0;
+  background-color: #f1f5f9;
+  color: #94a3b8;
+}
+
+/* Confirmation Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal-icon {
+  font-size: 54px;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.modal-message {
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.btn-modal {
+  flex: 1;
+  height: 60px;
+  border-radius: var(--radius-md);
+  font-size: 19px;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.btn-modal:active {
+  transform: scale(0.96);
+}
+
+.btn-modal-cancel {
+  background-color: #e2e8f0;
+  color: var(--text-main);
+}
+
+.btn-modal-danger {
+  background-color: var(--btn-danger);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+/* Hidden Utility */
+.hidden {
+  display: none !important;
+}
+
+/* iPad Landscape Specific Tweaks */
+@media (min-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .catalog-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cart-sidebar {
+    width: 380px;
+  }
+}
+

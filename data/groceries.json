@@ -1,0 +1,56 @@
+[
+  {
+    "category": "Dairy",
+    "icon": "🥛",
+    "items": [
+      { "id": "milk_whole_1l", "name": "Carton Milk 1L", "emoji": "🥛", "unit": "carton" },
+      { "id": "eggs_half_dozen", "name": "Eggs (1/2 Dozen)", "emoji": "🥚", "unit": "carton" },
+      { "id": "cheddar_cheese", "name": "Cheese Slices", "emoji": "🧀", "unit": "pack" },
+      { "id": "greek_yogurt", "name": "Greek Yogurt Tub", "emoji": "🥣", "unit": "tub" }
+    ]
+  },
+  {
+    "category": "Bakery",
+    "icon": "🍞",
+    "items": [
+      { "id": "wholemeal_bread", "name": "Wholemeal Bread", "emoji": "🍞", "unit": "loaf" },
+      { "id": "sourdough_bread", "name": "Sourdough Bread", "emoji": "🍞", "unit": "loaf" }
+    ]
+  },
+  {
+    "category": "Fruit & Veg",
+    "icon": "🍌",
+    "items": [
+      { "id": "bananas", "name": "Bananas", "emoji": "🍌", "unit": "each" },
+      { "id": "strawberries", "name": "Strawberries", "emoji": "🍓", "unit": "bag" },
+      { "id": "tomatoes", "name": "Tomatoes", "emoji": "🍅", "unit": "each" },
+      { "id": "cucumber", "name": "Cucumber", "emoji": "🥒", "unit": "bag" },
+      { "id": "red_grapes", "name": "Red Grapes", "emoji": "🍇", "unit": "bag" },
+      { "id": "white_grapes", "name": "White Grapes", "emoji": "🍇", "unit": "bag" },
+      { "id": "Capsicums", "name": "Capsicums", "emoji": "🥒", "unit": "each"}
+    ]
+  },
+  {
+    "category": "Meat & Deli",
+    "icon": "🥩",
+    "items": [
+      { "id": "chicken_breast", "name": "Chicken Breast", "emoji": "🍗", "unit": "pack" },
+      { "id": "beef_mince", "name": "Beef Mince", "emoji": "🥩", "unit": "pack" },
+      { "id": "sausages", "name": "Beef / Pork Sausages", "emoji": "🌭", "unit": "pack" },
+      { "id": "ham_sliced", "name": "Sliced Deli Ham", "emoji": "🥓", "unit": "pack" },
+      { "id": "bacon_rashers", "name": "Bacon Rashers", "emoji": "🥓", "unit": "pack" }
+    ]
+  },
+  {
+    "category": "Pantry",
+    "icon": "🥣",
+    "items": [
+      { "id": "tea_bags", "name": "Black Tea Bags", "emoji": "🫖", "unit": "box" },
+      { "id": "coffee", "name": "Instant Coffee", "emoji": "☕", "unit": "jar" },
+      { "id": "sweet_biscuits", "name": "Jatz Biscuits", "emoji": "🍪", "unit": "packet" },
+      { "id": "tinned_soup", "name": "Pumpkin Soup", "emoji": "🥫", "unit": "tin" },
+      { "id": "tinned_tuna", "name": "Tinned Tuna", "emoji": "🐟", "unit": "tin" },
+      { "id": "chocolate", "name": "Chocolate", "emoji": "🍫", "unit": "pack" }
+    ]
+  }
+]

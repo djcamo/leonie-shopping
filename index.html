@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leonie's Groceries</title>
+  
+  <!-- iPad Viewport Configuration: Prevents zoom and ensures full-screen landscape fit -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  
+  <!-- iOS Web App Full-screen Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Leonie's Groceries">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top Bar: Brand, Status Indicator -->
+    <header class="app-header">
+      <div class="brand-section">
+        <span class="brand-icon">🛒</span>
+        <div>
+          <h1 class="brand-title">Leonie's Groceries</h1>
+          <p class="brand-subtitle">iPad Landscape Shopping List</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Live Status Pill (Local / Synced / Syncing / Offline) -->
+        <div id="status-pill" class="status-pill local" title="Current cloud sync status">
+          <span class="status-dot"></span>
+          <span id="status-text">Local Mode</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Category Filter Bar -->
+    <nav id="category-nav" class="category-nav" aria-label="Grocery Categories">
+      <!-- Injected dynamically by app.js -->
+    </nav>
+
+    <!-- Main Content Area: Split View -->
+    <main class="app-main">
+      
+      <!-- Left Panel: Catalog Grid -->
+      <section class="catalog-section" aria-label="Available Groceries">
+        <div id="catalog-grid" class="catalog-grid">
+          <!-- Injected dynamically by app.js -->
+        </div>
+      </section>
+
+      <!-- Right Panel: Active Shopping List Sidebar -->
+      <aside class="cart-sidebar" aria-label="Current Shopping List">
+        <div class="sidebar-header">
+          <div class="sidebar-title">
+            <span>Current List</span>
+            <span id="total-badge" class="total-badge">0</span>
+          </div>
+        </div>
+
+        <div id="cart-list" class="sidebar-list">
+          <!-- Empty State Placeholder -->
+          <div id="cart-empty" class="empty-state">
+            <div class="empty-icon">📝</div>
+            <div class="empty-title">Your list is empty</div>
+            <p class="empty-text">Tap the <strong>▲</strong> button on any item to add it to your shopping list.</p>
+          </div>
+
+          <!-- Dynamic Active Items List -->
+          <div id="cart-items" class="cart-items-container"></div>
+        </div>
+
+        <!-- Sidebar Footer: Clear List -->
+        <div class="sidebar-footer">
+          <button id="btn-clear-list" class="btn-clear-all" disabled>
+            <span>🗑️</span>
+            <span>Clear List</span>
+          </button>
+        </div>
+      </aside>
+
+    </main>
+
+  </div>
+
+  <!-- Clear Confirmation Dialog Modal -->
+  <div id="clear-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-icon">⚠️</div>
+      <h2 id="modal-title" class="modal-title">Clear Shopping List?</h2>
+      <p class="modal-message">This will reset all item quantities to 0. Are you sure you want to start fresh?</p>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="btn-modal btn-modal-cancel">Keep List</button>
+        <button id="modal-confirm" class="btn-modal btn-modal-danger">Yes, Clear All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Controller -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
+
