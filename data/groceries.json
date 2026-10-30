@@ -42,7 +42,8 @@
       { "id": "fish_fingers", "name": "Fish Fingers", "emoji": "🐟", "unit": "pack" },
       { "id": "Frozen_yoghurt", "name": "Frozen Yoghurt", "emoji": "🥣", "unit": "pack" },
       {"id": "frozen_mashed_potatoes", "name": "Frozen Mashed Potatoes", "emoji": "🥔", "unit": "pack"},
-      {"id":"frozen_pizza", "name": "Frozen Pizza", "emoji": "🍕", "unit": "pack"}
+      {"id":"frozen_pizza", "name": "Frozen Pizza", "emoji": "🍕", "unit": "pack"},
+      { "id": "sweet_potatoes", "name": "Sweet Potatoe Fries", "emoji": "🥔", "unit": "pack" }
     ]
   },
   {
@@ -55,7 +56,10 @@
       { "id": "tinned_soup", "name": "Pumpkin Soup", "emoji": "🥫", "unit": "tin" },
       { "id": "tinned_tuna", "name": "Tinned Tuna", "emoji": "🐟", "unit": "tin" },
       { "id": "chocolate", "name": "Twirl Chocolate", "emoji": "🍫", "unit": "pack" },
-      {"id": "Cashews", "name": "Cashews", "emoji": "🌰", "unit": "pack"}
+      { "id": "Cashews", "name": "Cashews", "emoji": "🌰", "unit": "pack"},
+      { "id": "oat_bars", "name": "Oat Bars", "emoji": "🥣", "unit": "pack"},
+      { "id": "muesli", "name": "Muesli", "emoji": "🥣", "unit": "pack"},
+      { "id": "cough_lollies", "name": "Vapour Drops", "emoji": "🤧", "unit": "pack"}
     ]
   },
   {
@@ -64,7 +68,8 @@
       { "id": "toilet_paper", "name": "Toilet Paper (Pack)", "emoji": "🧻" },
       { "id": "paper_towel", "name": "Paper Towel", "emoji": "🧻" },
       { "id": "dish_liquid", "name": "Dishwashing Liquid", "emoji": "🧼" },
-      { "id": "tissues", "name": "Tissues (Box)", "emoji": "🤧" }
+      { "id": "tissues", "name": "Tissues (Box)", "emoji": "🤧" },
+      { "id": "toothpaste", "name": "Toothpaste", "emoji": "🦷" }
     ]
   }
 ]
