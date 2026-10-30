@@ -7,6 +7,7 @@ A tablet-optimized web application designed specifically for **iPad in landscape
 ## 📱 Features
 
 - **Built Specifically for iPad Landscape**: Fixed two-column layout with 70% item catalog on the left and 30% sticky shopping list on the right.
+- **Mobile Phone Shopping Mode**: When opened on a phone, the catalog grid and category navigation are automatically hidden, presenting **only the Current Shopping List** in full width for easy one-handed checking in supermarket aisles.
 - **Senior-Friendly Touch Controls**:
   - Oversized **`▲` (Increase)** and **`▼` (Decrease)** buttons ($\ge 64\text{px} \times 56\text{px}$).
   - Zero typing required — simple, tactile one-touch operation.

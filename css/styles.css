@@ -486,6 +486,10 @@ button, input, select, .item-card, .cat-pill {
   color: var(--text-muted);
 }
 
+.empty-state .phone-msg {
+  display: none;
+}
+
 /* Active Cart Item Row */
 .cart-row {
   display: flex;
@@ -697,6 +701,120 @@ button, input, select, .item-card, .cat-pill {
   }
   .cart-sidebar {
     width: 380px;
+  }
+}
+
+/* =============================================================================
+   Mobile Phone View (< 768px or Landscape Phones < 500px height)
+   Shows ONLY the Current Shopping List Pane
+   ============================================================================= */
+@media (max-width: 768px), (max-height: 500px) {
+  /* Hide the Catalog Grid and Category Navigation Bar */
+  .category-nav {
+    display: none !important;
+  }
+
+  .catalog-section {
+    display: none !important;
+  }
+
+  /* Compact Header for Phones */
+  .app-header {
+    height: auto;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  .brand-icon {
+    font-size: 26px;
+  }
+
+  .brand-title {
+    font-size: 19px;
+  }
+
+  .brand-subtitle {
+    display: none; /* Hide subtitle on phones to save vertical space */
+  }
+
+  .status-pill {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .status-pill .status-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Expand Current List Pane to 100% full screen width */
+  .cart-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1;
+    border-left: none;
+    box-shadow: none;
+  }
+
+  .sidebar-header {
+    padding: 14px 16px;
+    background-color: #f8fafc;
+  }
+
+  .sidebar-title {
+    font-size: 19px;
+  }
+
+  /* Shopping List Container */
+  .sidebar-list {
+    padding: 12px 16px;
+  }
+
+  /* Cart Row Sizing for Phone One-Handed Shopping */
+  .cart-row {
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .cart-row-name {
+    font-size: 17px;
+  }
+
+  .cart-row-unit {
+    font-size: 13px;
+  }
+
+  /* 44px x 44px minimum touch targets */
+  .cart-btn-mini {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .cart-qty-badge {
+    font-size: 20px;
+    min-width: 34px;
+  }
+
+  /* Footer safe area for modern phones with bottom home bar */
+  .sidebar-footer {
+    padding: 12px 16px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+
+  .btn-clear-all {
+    height: 52px;
+    font-size: 16px;
+  }
+
+  /* Empty state text for phone shoppers */
+  .empty-state .default-msg {
+    display: none;
+  }
+
+  .empty-state .phone-msg {
+    display: block;
   }
 }
 

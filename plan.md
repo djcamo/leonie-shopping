@@ -70,6 +70,12 @@ Screen ratio in landscape (~4:3 to 16:10). The screen is divided into a fixed he
   - One-tap quick remove button per item.
   - "Clear List" button with confirmation prompt at bottom.
 
+### 2.2 Mobile Phone View (Shopping Mode)
+- **Viewport target**: Screens $\le 768\text{px}$ or mobile landscape heights $\le 500\text{px}$.
+- **Single Pane Focus**: Automatically hides the catalog grid and category navigation bar so only the active **Current List** pane is shown.
+- **Full Width**: Expands the list pane to 100% width, optimized for one-handed handheld use in store aisles.
+- **Touch Sizing**: Cart action buttons increased to $\ge 44\text{px} \times 44\text{px}$ touch targets with iOS safe-area bottom padding.
+
 ---
 
 ## 3. Data Design & Schemas
