@@ -6,7 +6,8 @@
       { "id": "milk_whole_1l", "name": "Carton Milk 1L", "emoji": "🥛", "unit": "carton" },
       { "id": "eggs_half_dozen", "name": "Eggs (1/2 Dozen)", "emoji": "🥚", "unit": "carton" },
       { "id": "cheddar_cheese", "name": "Cheese Slices", "emoji": "🧀", "unit": "pack" },
-      { "id": "greek_yogurt", "name": "Greek Yogurt Tub", "emoji": "🥣", "unit": "tub" }
+      { "id": "greek_yogurt", "name": "Greek Yogurt Tub", "emoji": "🥣", "unit": "tub" },
+      {"id": "Butter", "name": "Butter", "emoji": "🧈", "unit": "packet"}
     ]
   },
   {
@@ -27,7 +28,9 @@
       { "id": "cucumber", "name": "Cucumber", "emoji": "🥒", "unit": "bag" },
       { "id": "red_grapes", "name": "Red Grapes", "emoji": "🍇", "unit": "bag" },
       { "id": "white_grapes", "name": "White Grapes", "emoji": "🍇", "unit": "bag" },
-      { "id": "Capsicum", "name": "Capsicum", "emoji": "🌶️", "unit": "each" }
+      { "id": "Capsicum", "name": "Capsicum", "emoji": "🌶️", "unit": "each" },
+      {"id": "Oranges", "name": "Oranges", "emoji": "🍊", "unit": "each"},
+      {"id": "Mandarins", "name": "Mandarins", "emoji": "🍊", "unit": "each"}
     ]
   },
   {
